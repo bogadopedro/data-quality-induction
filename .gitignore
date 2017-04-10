@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+*.iml
+target/
+web-app/WEB-INF/tld/c.tld
+stacktrace.log
+*.swp
+*~
+*.log
+.asscache
+.slcache
+out
+data

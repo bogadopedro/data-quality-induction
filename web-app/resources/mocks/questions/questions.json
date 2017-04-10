@@ -1,0 +1,101 @@
+[
+  {
+    "idQuestion": "2",
+    "question": "¿En qué ciudad nació el jugador Lionel Messi?",
+    "options": [
+      "Rosario",
+      "Mar del Plata",
+      "Santa fe",
+      "Bolivar"
+    ],
+    "correctAnswer": "Rosario",
+    "description": "Naci´0 el 24 de Junio de 1987 en Rosario. Tiene 29 años",
+    "category": {
+      "idCategory": "57d743f5e4b087673b8c9f7f",
+      "name": "Deporte"
+    },
+    "subcategory": null,
+    "currentPosition": 0
+  },
+  {
+    "idQuestion": "4",
+    "question": "¿En qué año murió Juan Domingo Perón?",
+    "options": [
+      "1970",
+      "1972",
+      "1973",
+      "1974"
+    ],
+    "correctAnswer": "1974",
+    "description": "Falleció el 1 de Julio de 1974 de un para cardíaco en la quinta de Olivos",
+    "category": {
+      "idCategory": "57d743f9e4b087673b8c9f80",
+      "name": "Historia"
+    },
+    "subcategory": null,
+    "currentPosition": 0
+  },
+  {
+    "idQuestion": "5",
+    "question": "¿En qué año se fundó Córdoba?",
+    "options": [
+      "1685",
+      "1573",
+      "1825",
+      "1481",
+      "1560"
+    ],
+    "correctAnswer": "1573",
+    "description": "El 6 de julio de 1573 Jerónimo Luis de Cabrera fundó la ciudad de Córdoba de La Nueva Andalucía, a orillas del río Suquía.",
+    "category": null,
+    "subcategory": null,
+    "currentPosition": 0
+  },
+  {
+    "idQuestion": "6",
+    "question": "¿En qué año Argentina ganó su primer campeonato mundial de fútbol?",
+    "options": [
+      "1994",
+      "1982",
+      "1978",
+      "2002",
+      "1929"
+    ],
+    "correctAnswer": "1978",
+    "description": "Se jugó en Argentina y la final fue contra Holanda, ganamos 3 a 1",
+    "category": null,
+    "subcategory": null,
+    "currentPosition": 0
+  },
+  {
+    "idQuestion": "7",
+    "question": "¿Cuántos metros mide la Torre Eiffel?",
+    "options": [
+      "250",
+      "300",
+      "350",
+      "400",
+      "450"
+    ],
+    "correctAnswer": "300",
+    "description": "Inicialmente nombrada Torre de 300 metros, es una estructura de hierro situada en Paris.",
+    "category": null,
+    "subcategory": null,
+    "currentPosition": 0
+  },
+  {
+    "idQuestion": "15",
+    "question": "¿En qué ciudad nació Domingo Faustino Sarmiento?",
+    "options": [
+      "Buenos Aires",
+      "Mendoza",
+      "Cuacete",
+      "San Juan"
+    ],
+    "correctAnswer": "San Juan",
+    "description": "Falleció en Asunción, Paraguay, 11 de septiembre de 1888",
+    "category": null,
+    "subcategory": null,
+    "currentPosition": 0
+  }
+]
