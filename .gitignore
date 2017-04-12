@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+*.iml
+target/
+web-app/WEB-INF/tld/c.tld
+stacktrace.log
+*.log
+.asscache
+.slcache
+out
+data
+grailsw
+grailsw.bat
+wrapper
