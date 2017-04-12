@@ -13,21 +13,13 @@ class RESTCuriosaMenteClient implements CuriosaMenteClient{
     def grailsApplication
 
     @Override
-    def getAllQuestions() {
+    Question[] getAllQuestions() {
 
-        log.info("Getting questions from server")
+        log.info("Getting questions from CuriosaMente")
 
-        String endpoint = grailsApplication.config.curiosamente.url
+        String uri = grailsApplication.config.curiosamente.url + "/question"
 
-        String uri = endpoint + "/question"
-
-        Question[] response = rest.getRestTemplate().getForObject(uri, Question[].class)
-
-        response.each {
-            log.debug(it)
-        }
-
-        return response
+        return rest.getRestTemplate().getForObject(uri, Question[].class)
 
     }
 

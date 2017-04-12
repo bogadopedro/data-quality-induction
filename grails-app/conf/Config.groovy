@@ -35,7 +35,7 @@ grails.mime.types = [ // the first one is the default format
 //grails.urlmapping.cache.maxsize = 1000
 
 // Legacy setting for codec used to encode data with ${}
-grails.views.default.codec = "html"
+//grails.views.default.codec = "html"
 
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
@@ -57,25 +57,6 @@ grails {
         // escapes all not-encoded output at final stage of outputting
         // filteringCodecForContentType.'text/html' = 'html'
     }
-
-//    mongodb {
-//        host = "localhost"
-//        port = 27017
-//        //username = "bogadopedro"
-//        //password = "1234"
-//        databaseName = "weather"
-//
-//        options {
-//            connectionsPerHost = 10
-//            autoConnectRetry = true
-//            connectTimeout = 300
-//            socketTimeout = 300
-//            threadsAllowedToBlockForConnectionMultiplier = 5
-//            maxWaitTime = 120000
-//            //writeConcern = new com.mongodb.WriteConcern(0, 0, false)
-//
-//        }
-//    }
 
 }
 

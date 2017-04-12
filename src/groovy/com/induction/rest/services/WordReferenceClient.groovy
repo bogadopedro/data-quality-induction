@@ -6,6 +6,5 @@ package com.induction.rest.services
 interface WordReferenceClient {
 
     boolean wordContainsError(String word)
-    boolean sentenceContainsError(String word)
 
 }

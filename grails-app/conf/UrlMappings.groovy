@@ -1,13 +1,39 @@
 class UrlMappings {
 
 	static mappings = {
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
+
+        "400"(controller:'error', action:'treatExceptions')
+        "401"(controller:'error', action:'treatExceptions')
+        "403"(controller:'error', action:'treatExceptions')
+        "404"(controller:'error', action:'treatExceptions')
+        "500"(controller:'error', action:'treatExceptions')
+
+        "/checkSentence"(controller: "checkSpeller", parseRequest: true) {
+            action = [
+                    GET: "methodNotAllowed",
+                    POST:"checkSentence",
+                    PUT:"methodNotAllowed",
+                    DELETE:"methodNotAllowed"
+            ]
         }
 
-        "/"(view:"/index")
-        "500"(view:'/error')
+        "/checkQuestions"(controller: "checkSpeller", parseRequest: true) {
+            action = [
+                    GET: "methodNotAllowed",
+                    POST:"checkQuestions",
+                    PUT:"methodNotAllowed",
+                    DELETE:"methodNotAllowed"
+            ]
+        }
+
+        "/words"(controller: "word", parseRequest: true) {
+            action = [
+                    GET: "methodNotAllowed",
+                    POST:"addWord",
+                    PUT:"methodNotAllowed",
+                    DELETE:"methodNotAllowed"
+            ]
+        }
+
 	}
 }

@@ -5,13 +5,12 @@ package com.induction.rest.services
  */
 class MockWordReferenceClient implements WordReferenceClient {
 
-    @Override
-    boolean wordContainsError(String word) {
-        return false
-    }
+
+    public static final String MOCKS_WORDS = "hola"
 
     @Override
-    boolean sentenceContainsError(String word) {
-        return false
+    boolean wordContainsError(String word) {
+        return !MOCKS_WORDS.contains(word)
     }
+
 }

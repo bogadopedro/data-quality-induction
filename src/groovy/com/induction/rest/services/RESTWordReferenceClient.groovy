@@ -1,6 +1,5 @@
 package com.induction.rest.services
 
-import com.induction.Word
 import org.apache.log4j.Logger
 
 /**
@@ -8,6 +7,7 @@ import org.apache.log4j.Logger
  */
 class RESTWordReferenceClient implements WordReferenceClient {
 
+    public static final String NOT_FOUND = "Ningún título tiene"
     def rest
     def log = Logger.getLogger(this.class)
     def grailsApplication
@@ -16,62 +16,19 @@ class RESTWordReferenceClient implements WordReferenceClient {
     @Override
     boolean wordContainsError(String word) {
 
-        log.info("Checking word on WordReference")
+        log.info("Checking word: ${word} : on WordReference")
 
-        log.info("Word:" + word)
-
-        String url = grailsApplication.config.wordreference.url
-
-        String uri = "${url}/definicion/${word}"
+        String uri = grailsApplication.config.wordreference.url + '/definicion/${word}'
 
         String page = rest.getRestTemplate().getForEntity(uri, String.class)
 
-        if (page.contains("Ningún título tiene")) {
-            print word
-            print "Palabra con error"
+        if (page.contains(NOT_FOUND)) {
+            print "${word}: Palabra con error"
             return true
         } else {
-            print "palabra escrita correctamente"
+            print "${word}: Palabra escrita correctamente"
+            return false
         }
-
-        return false
     }
 
-    @Override
-    boolean sentenceContainsError(String sentence) {
-
-        log.info("Checking sentence on WordReference")
-
-        log.info("Word:" + sentence)
-
-        String url = grailsApplication.config.wordreference.url
-
-        String[] words = sentence.replaceAll("[\\P{L}+]", " ").trim().split("\\P{L}+")
-
-        words.each {
-            String uri = "${url}/definicion/${it}"
-
-            String page = rest.getRestTemplate().getForEntity(uri, String.class)
-
-            if (page.contains("Ningún título tiene") && !isWordOnDB(it)) {
-                print it
-                print "Palabra con error"
-                return true
-            } else {
-                print "palabra escrita correctamente"
-            }
-        }
-
-        return false
-    }
-
-    static boolean isWordOnDB(String word) {
-//
-        Word.saveAll(new Word(word))
-
-        String aux = Word.findByWord(word)
-
-        return aux != null
-
-    }
 }

@@ -4,10 +4,11 @@
 target/
 web-app/WEB-INF/tld/c.tld
 stacktrace.log
-*.swp
-*~
 *.log
 .asscache
 .slcache
 out
 data
+grailsw
+grailsw.bat
+wrapper
