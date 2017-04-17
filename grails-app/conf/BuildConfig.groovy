@@ -61,6 +61,9 @@ grails.project.dependency.resolution = {
 //
         compile ':mongodb:3.0.3'
         compile ":mlapi:2.4.40"
+        compile ":ml-bigqueue:2.6.6"
+        compile 'org.grails.plugins:mail:1.0.7'
+
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.10" // or ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"

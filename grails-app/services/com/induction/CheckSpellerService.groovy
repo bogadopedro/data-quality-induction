@@ -11,6 +11,10 @@ class CheckSpellerService {
 
     def jedis
 
+    def mailService
+
+    def bigQueueProducer
+
     CheckSentenceResult checkSentence(String sentence) {
 
         CheckSentenceResult checkSentenceResult = new CheckSentenceResult()
@@ -24,7 +28,7 @@ class CheckSpellerService {
                 def fromDB
                 try {
                     fromDB = Word.findByWord(it)
-                } catch (Exception e){
+                } catch (Exception e) {
                     print "Exception retrieving from DB"
                 }
 
@@ -70,7 +74,23 @@ class CheckSpellerService {
                 }
             }
         }
+
+        if (checkSentenceResults.errorWords > 0) {
+            mailService.sendMail {
+                to "bogadopedro@gmail.com"
+                subject "New typo on CuriosaMente"
+                text "checkSentenceResults"
+            }
+
+            publishMessage(checkSentenceResults)
+        }
         return checkSentenceResults
     }
 
+    def publishMessage(message) {
+
+        print("Publicando")
+        bigQueueProducer.send(["typochecker_feed"], message)
+        print("Publicado")
+    }
 }

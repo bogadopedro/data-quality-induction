@@ -13,4 +13,17 @@ class CheckSentenceResult {
         quantityOfError++
     }
 
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        CheckSentenceResult that = (CheckSentenceResult) o
+
+        if (quantityOfError != that.quantityOfError) return false
+        if (errorWords != that.errorWords) return false
+        if (idQuestion != that.idQuestion) return false
+
+        return true
+    }
+
 }

@@ -58,6 +58,17 @@ grails {
         // filteringCodecForContentType.'text/html' = 'html'
     }
 
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "mercadolibretest2017@gmail.com"
+        password = "mercadolibre"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
+
 }
 
 grails.converters.encoding = "UTF-8"
@@ -84,6 +95,10 @@ grails.hibernate.cache.queries = false
 grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
 grails.hibernate.osiv.readonly = false
+
+grails.mail.default.from = "mercadolibretest2017@gmail.com"
+
+grails.mail.default.to = "bogadopedro@gmail.com"
 
 environments {
     development {

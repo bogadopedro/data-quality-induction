@@ -1,9 +1,11 @@
 import com.induction.rest.services.MockCuriosaMenteClient
+import com.induction.rest.services.MockWordReferenceClient
 import com.induction.rest.services.RESTCuriosaMenteClient
 import com.induction.rest.services.RESTWordReferenceClient
 import grails.plugins.rest.client.RestBuilder
 import grails.util.Environment
 import redis.clients.jedis.Jedis
+import com.fiftyonred.mock_jedis.MockJedis
 
 // Place your Spring DSL code here
 beans = {
@@ -29,11 +31,15 @@ beans = {
 
             jedis(Jedis, "localhost") {}
 
-            curiosamenteClient(RESTCuriosaMenteClient) { bean ->
+            curiosamenteClient(MockCuriosaMenteClient) { bean ->
                 bean.scope = "singleton"
-                grailsApplication = ref("grailsApplication")
-                rest = ref("rest")
             }
+
+//            curiosamenteClient(RESTCuriosaMenteClient) { bean ->
+//                bean.scope = "singleton"
+//                grailsApplication = ref("grailsApplication")
+//                rest = ref("rest")
+//            }
 
             wordReferenceClient(RESTWordReferenceClient) { bean ->
                 bean.scope = "singleton"
@@ -43,15 +49,14 @@ beans = {
         }
 
         test {
-            jedis(MockJedis) {}
+
+            jedis(MockJedis, "test") {}
 
             curiosamenteClient(MockCuriosaMenteClient) { bean ->
                 bean.scope = "singleton"
             }
             wordReferenceClient(MockWordReferenceClient) { bean ->
                 bean.scope = "singleton"
-                grailsApplication = ref("grailsApplication")
-                rest = ref("rest")
             }
         }
     }

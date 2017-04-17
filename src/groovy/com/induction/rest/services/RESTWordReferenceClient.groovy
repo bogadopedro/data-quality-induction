@@ -18,7 +18,7 @@ class RESTWordReferenceClient implements WordReferenceClient {
 
         log.info("Checking word: ${word} : on WordReference")
 
-        String uri = grailsApplication.config.wordreference.url + '/definicion/${word}'
+        String uri = grailsApplication.config.wordreference.url + "/definicion/${word}"
 
         String page = rest.getRestTemplate().getForEntity(uri, String.class)
 
