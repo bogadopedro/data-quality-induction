@@ -27,7 +27,7 @@ class CheckSpellerController {
     def checkQuestions() {
         //TODO - thread
         checkSpellerService.checkQuestions()
-        return [response: "Process has been started", status: HttpServletResponse.SC_OK]
+        return [response: [messsage: "Typo checker has been started"], status: HttpServletResponse.SC_OK]
     }
 
     def methodNotAllowed = {

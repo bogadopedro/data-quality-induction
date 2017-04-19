@@ -11,9 +11,7 @@ class CheckSpellerService {
 
     def jedis
 
-    def mailService
-
-    def bigQueueProducer
+    def typoCheckerProducer
 
     CheckSentenceResult checkSentence(String sentence) {
 
@@ -68,29 +66,17 @@ class CheckSpellerService {
 
                 CheckSentenceResult errorResult = checkSentence(it.question)
                 errorResult.idQuestion = it.idQuestion
+
                 checkSentenceResults.add(errorResult)
-                if (errorResult.quantityOfError != 0) {
-                    print "Publish result"
-                }
-            }
-        }
 
-        if (checkSentenceResults.errorWords > 0) {
-            mailService.sendMail {
-                to "bogadopedro@gmail.com"
-                subject "New typo on CuriosaMente"
-                text "checkSentenceResults"
             }
 
-            publishMessage(checkSentenceResults)
         }
+
+        print 'Publishing results'
+        typoCheckerProducer.publishMessage(checkSentenceResults)
+
         return checkSentenceResults
     }
 
-    def publishMessage(message) {
-
-        print("Publicando")
-        bigQueueProducer.send(["typochecker_feed"], message)
-        print("Publicado")
-    }
 }

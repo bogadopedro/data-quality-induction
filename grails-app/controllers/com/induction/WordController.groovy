@@ -1,5 +1,7 @@
 package com.induction
 
+import com.ml.exceptions.MethodNotAllowedException
+
 import javax.servlet.http.HttpServletResponse
 
 class WordController {
@@ -18,6 +20,10 @@ class WordController {
         }
 
         return [response: ["${word} Word added successfully."], status: HttpServletResponse.SC_OK]
+    }
+
+    def methodNotAllowed = {
+        throw new MethodNotAllowedException("Method not allowed")
     }
 
 }

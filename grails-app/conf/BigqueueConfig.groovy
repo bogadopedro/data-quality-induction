@@ -3,7 +3,7 @@ bigqueue {
 
     // for single cluster connection
     connectionPool {
-        baseUrl = "http://localhost:8081" //MANDATORY!
+        baseUrl = "http://localhost:8081"
         resourcesNumber = 100
         repairThreadsNumber = 10
     }
@@ -11,12 +11,12 @@ bigqueue {
     // for multi cluster connection
     connectionPools {
         test {
-            baseUrl = "http://localhost:8081" //MANDATORY!
+            baseUrl = "http://localhost:8081"
             resourcesNumber = 100
             repairThreadsNumber = 10
         }
         test1 {
-            baseUrl = "http://localhost:8081" //MANDATORY!
+            baseUrl = "http://localhost:8081"
             resourcesNumber = 100
             repairThreadsNumber = 10
         }

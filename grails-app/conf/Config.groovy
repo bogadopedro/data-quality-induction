@@ -2,10 +2,7 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-// grails.config.locations = [ "classpath:${appName}-config.properties",
-//                             "classpath:${appName}-config.groovy",
-//                             "file:${userHome}/.grails/${appName}-config.properties",
-//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+ grails.config.locations = ["classpath:BigqueueConfig.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
@@ -70,6 +67,10 @@ grails {
     }
 
 }
+
+grails.mail.default.from = "mercadolibretest2017@gmail.com"
+grails.mail.default.to = "pedro.bogado@mercadolibre.com"
+
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration

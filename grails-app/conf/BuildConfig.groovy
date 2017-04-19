@@ -50,6 +50,9 @@ grails.project.dependency.resolution = {
         compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
         compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
 
+        compile 'com.mercadolibre.opensource.frameworks:restclient:1.1.4'
+        compile('commons-httpclient:commons-httpclient:3.1')
+
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
         test 'com.fiftyonred:mock-jedis:0.4.0'
 
@@ -63,11 +66,14 @@ grails.project.dependency.resolution = {
         compile ":mlapi:2.4.40"
         compile ":ml-bigqueue:2.6.6"
         compile 'org.grails.plugins:mail:1.0.7'
+        compile 'org.grails.plugins:rest-client-builder:2.1.1'
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.10" // or ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"
-        compile 'org.grails.plugins:rest-client-builder:2.1.1'
+
+
+        compile ':rest:0.8'
 
     }
 }

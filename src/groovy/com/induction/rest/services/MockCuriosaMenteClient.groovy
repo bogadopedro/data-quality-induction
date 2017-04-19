@@ -23,7 +23,7 @@ class MockCuriosaMenteClient implements CuriosaMenteClient{
             mockedQuestions = "[\n" +
                     "  {\n" +
                     "    \"idQuestion\": \"2\",\n" +
-                    "    \"question\": \"¿En qué ciudad nació el jugador Lionel Messi?\",\n" +
+                    "    \"question\": \"¿En qué ciudadd nació el jugador Lionel Messi?\",\n" +
                     "    \"options\": [\n" +
                     "      \"Rosario\",\n" +
                     "      \"Mar del Plata\",\n" +

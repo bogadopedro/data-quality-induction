@@ -35,5 +35,14 @@ class UrlMappings {
             ]
         }
 
+        "/ping"(controller: "ping", parseRequest: true) {
+            action = [
+                    GET: "ping",
+                    POST:"methodNotAllowed",
+                    PUT:"methodNotAllowed",
+                    DELETE:"methodNotAllowed"
+            ]
+        }
+
 	}
 }
